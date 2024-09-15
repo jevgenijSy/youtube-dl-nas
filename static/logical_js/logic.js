@@ -53,8 +53,9 @@ $(function () {
                 window.setTimeout(function(){
                     messagesTxt(data.msg);
                 },400);
-                //
-                $("#form1").trigger("reset");
+                //please do not reset the form. In case of selecting other download option such as mp3 you have to set it every time. Use instead .value= ""
+                //$("#form1").trigger("reset");
+                $("#form1").value = ""
             }
             , error:function (jqXHR, textStatus, errorThrown) {
                 if(jqXHR.status==422){
